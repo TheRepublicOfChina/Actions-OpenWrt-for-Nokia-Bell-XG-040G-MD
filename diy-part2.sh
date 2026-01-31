@@ -14,6 +14,12 @@
 # sed -i 's/192.168.1.1/192.168.100.1/g' package/base-files/files/bin/config_generate
 
 # Modify default theme
+sed -i "s/bootstrap/argon/g" feeds/luci/collections/luci/Makefile
+sed -i "s/bootstrap/argon/g" feeds/luci/collections/luci-light/Makefile
+sed -i "s/bootstrap/argon/g" feeds/luci/collections/luci-nginx/Makefile
+sed -i "s/bootstrap/argon/g" feeds/luci/collections/luci-ssl-nginx/Makefile
+
+# 如果你担心源码里默认是 material，可以再补一行防波折
 sed -i 's/luci-theme-material/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
 
 # Patch OverClock
